@@ -17,6 +17,8 @@ class NewVisitorTest(unittest.TestCase):
 
 		# title says "To-Do"
 		self.assertIn('To-Do', self.browser.title)
+		header_text = self.browser.find_element_by_tag_name('h1').text
+		self.assertIn('To-Do', header_text)
 
 		# enter a to-do item
 		inputbox = self.browser.find_element_by_id('id_new_item')
